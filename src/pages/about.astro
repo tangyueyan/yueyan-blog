@@ -15,30 +15,44 @@ import { SITE_TITLE } from '../consts';
 		<main>
 			<article class="about">
 				<!-- 在下面这行的 ___ 处填上你的名字 / fill your name into the ___ below -->
-				<p class="name">我叫<span class="乐言">　</span>。</p>
+				<p class="name" style="animation-delay:.15s">我叫<span class="blank">　</span>。</p>
 
-				<p class="zh">常搬家的人，把家带在身上。走过太多城市，几乎没有什么东西一直跟着我——只有一床床品，从离家第一天带到现在，是我每夜躺下时触到的同一样东西。</p>
-				<p class="en">Someone who moved often, and learned to carry home on the body. Across too many cities almost nothing has stayed — only a set of bedding, carried since the first day I left home, the same thing I touch each night as I lie down.</p>
+				<p class="zh" style="animation-delay:.5s">常搬家的人，把家带在身上。走过太多城市，几乎没有什么东西一直跟着我——只有一床床品，从离家第一天带到现在，是我每夜躺下时触到的同一样东西。</p>
+				<p class="en" style="animation-delay:.62s">Someone who moved often, and learned to carry home on the body. Across too many cities almost nothing has stayed — only a set of bedding, carried since the first day I left home, the same thing I touch each night as I lie down.</p>
 
-				<p class="zh">因为什么都会失去，我很久都难对物用情，人就慢慢飘了起来，头重脚轻。最近才开始学着做饭、照顾自己的身体，把脚一点点放回地上。</p>
-				<p class="en">Because everything can be lost, for a long time I found it hard to grow attached to things, and slowly I drifted — top-heavy, my feet off the ground. Only lately have I begun to cook, to care for my body, to set my feet back down.</p>
+				<p class="zh" style="animation-delay:.95s">因为什么都会失去，我很久都难对物用情，人就慢慢飘了起来，头重脚轻。最近才开始学着做饭、照顾自己的身体，把脚一点点放回地上。</p>
+				<p class="en" style="animation-delay:1.07s">Because everything can be lost, for a long time I found it hard to grow attached to things, and slowly I drifted — top-heavy, my feet off the ground. Only lately have I begun to cook, to care for my body, to set my feet back down.</p>
 
-				<p class="zh">我在两种语言之间读和写；只是"爱"这件事，说出与感到，始终落在不同的语言里。</p>
-				<p class="en">To say "love" and to feel it never seem to happen in the same language.</p>
+				<p class="zh" style="animation-delay:1.4s">我在两种语言之间读和写；只是“爱”这件事，说出与感到，始终落在不同的语言里。</p>
+				<p class="en" style="animation-delay:1.52s">To say “love” and to feel it never seem to happen in the same language.</p>
 
-				<p class="zh">我一直在和自己说话——和过去的、也和未来的自己。旅行时我格外留意镜子，大概是想看见自己、琢磨自己、感受自己的感受。无论研究、生活，还是一段关系，于我都是同一件事：不断重新认识我是谁。</p>
-				<p class="en">I'm always talking with myself — the self I was, the self I'll be. When I travel I'm drawn to mirrors, wanting, I think, to see myself, to turn myself over, to feel what I feel. Research, life, a relationship — to me they are one thing: coming to know, again and again, who I am.</p>
+				<p class="zh" style="animation-delay:1.85s">我一直在和自己说话——和过去的、也和未来的自己。旅行时我格外留意镜子，大概是想看见自己、琢磨自己、感受自己的感受。无论研究、生活，还是一段关系，于我都是同一件事：不断重新认识我是谁。</p>
+				<p class="en" style="animation-delay:1.97s">I'm always talking with myself — the self I was, the self I'll be. When I travel I'm drawn to mirrors, wanting, I think, to see myself, to turn myself over, to feel what I feel. Research, life, a relationship — to me they are one thing: coming to know, again and again, who I am.</p>
 
-				<p class="zh">因为先看见自己，才看得见别人，看得见世界。</p>
-				<p class="en">Because only by seeing myself can I come to see others, and the world.</p>
+				<p class="zh" style="animation-delay:2.3s">因为先看见自己，才看得见别人，看得见世界。</p>
+				<p class="en" style="animation-delay:2.42s">Because only by seeing myself can I come to see others, and the world.</p>
 
-				<hr class="rule" />
-				<p class="zh close">世界是我看到的样子，也是你看到的样子。</p>
-				<p class="echo" aria-hidden="true">世界是我看到的样子，也是你看到的样子。</p>
-				<p class="en">The world is as I see it — and as you see it, too.</p>
+				<div class="ending" style="animation-delay:2.8s">
+					<hr class="rule" />
+					<p class="zh close">世界是我看到的样子，也是你看到的样子。</p>
+					<p class="echo" aria-hidden="true">世界是我看到的样子，也是你看到的样子。</p>
+					<p class="en last">The world is as I see it — and as you see it, too.</p>
+				</div>
 			</article>
 		</main>
 		<Footer />
+
+		<script>
+			// 这一页知道现在几点：清晨/黄昏让倒影泛一点暖，深夜偏冷，白日中性
+			const h = new Date().getHours();
+			const tint =
+				h >= 5 && h < 8 ? '#7d6244'
+				: h >= 17 && h < 20 ? '#8a5e40'
+				: h >= 20 || h < 5 ? '#4a5570'
+				: '#1a1a1a';
+			const el = document.querySelector('.about');
+			if (el) el.style.setProperty('--tint', tint);
+		</script>
 	</body>
 </html>
 
@@ -47,10 +61,28 @@ import { SITE_TITLE } from '../consts';
 		width: 100%;
 	}
 	.about {
+		--tint: #1a1a1a;
 		max-width: 40rem;
 		margin: 4rem auto;
 		padding: 0 1.25rem;
 	}
+
+	/* 呼吸般地逐段浮起 */
+	.about > * {
+		opacity: 0;
+		animation: fade-up 1s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+	}
+	@keyframes fade-up {
+		from {
+			opacity: 0;
+			transform: translateY(8px);
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
 	.name {
 		font-family: Georgia, 'Times New Roman', 'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', serif;
 		font-size: 1.25rem;
@@ -75,10 +107,14 @@ import { SITE_TITLE } from '../consts';
 		color: #9a9a94;
 		margin: 0 0 2rem;
 	}
+
+	.ending {
+		margin-top: 0.6rem;
+	}
 	.rule {
 		border: none;
 		border-top: 0.5px solid rgba(0, 0, 0, 0.12);
-		margin: 0.6rem 0 0;
+		margin: 0;
 	}
 	.close {
 		margin-top: 1.4rem;
@@ -88,16 +124,29 @@ import { SITE_TITLE } from '../consts';
 		font-family: Georgia, 'Times New Roman', 'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', serif;
 		font-size: 1.125rem;
 		line-height: 2;
-		color: #1a1a1a;
+		color: var(--tint, #1a1a1a);
 		transform: scaleY(-1);
 		opacity: 0.15;
 		margin: 4px 0 0;
 		user-select: none;
 		pointer-events: none;
+		transition: opacity 0.7s ease;
 		-webkit-mask-image: linear-gradient(to top, #000, transparent 72%);
 		mask-image: linear-gradient(to top, #000, transparent 72%);
 	}
-	.en:last-child {
+	/* 镜子会认得光：光标移近结尾，倒影悄悄亮一下 */
+	.ending:hover .echo {
+		opacity: 0.3;
+	}
+	.last {
 		margin-top: 0.2rem;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.about > * {
+			opacity: 1;
+			animation: none;
+			transform: none;
+		}
 	}
 </style>
