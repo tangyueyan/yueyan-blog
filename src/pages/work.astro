@@ -16,14 +16,14 @@ import Header from '../components/Header.astro';
 			<h1>研究 · Work</h1>
 
 			<section>
-				<p>这里放着我近年的一些研究工作。</p>
-				<p>我关注婴儿如何在日常生活中学习——跟随目光、与人共同注意、说出最初的词语。过去我们对婴儿的认识，大多来自实验室里短暂而人为的片刻；我更好奇的是，当研究走进真实的家庭、走进平凡的一天，我们会看见什么。</p>
-				<p>为此，我和同事们一起做了一些开源、轻便、低成本的婴儿可穿戴设备与数据处理工具，希望让更多实验室——尤其是资源有限、常被忽略的群体——也能参与到婴儿发展的研究里来。</p>
+				<p class="zh">这里放着我近年的一些研究工作。</p>
+				<p class="zh">我关注婴儿如何在日常生活中学习——跟随目光、与人共同注意、说出最初的词语。过去我们对婴儿的认识，大多来自实验室里短暂而人为的片刻；我更好奇的是，当研究走进真实的家庭、走进平凡的一天，我们会看见什么。</p>
+				<p class="zh">为此，我和同事们一起做了一些开源、轻便、低成本的婴儿可穿戴设备与数据处理工具，希望让更多实验室——尤其是资源有限、常被忽略的群体——也能参与到婴儿发展的研究里来。</p>
 				<p class="en">These are some of the things I've been working on in recent years. I'm interested in how infants learn in everyday life — following gaze, sharing attention, speaking their first words. Much of what we know about babies has come from brief, artificial moments in the lab; I'm more curious about what we find when research walks into real homes, into an ordinary day. Toward that, my colleagues and I have built open-source, lightweight, low-cost infant wearables and data tools, so that more labs — especially those studying communities often left out — can take part in developmental research.</p>
 			</section>
 
 			<section>
-				<p>我的博士论文 <em>Joint Attention in the Wild</em>（真实生活中的共同注意）探讨婴儿如何在自然的家庭情境里与照护者协调注意。近来，我把重心放在方法与工具上：一套名为 OpenBabyographer 的开源婴儿可穿戴设备，以及配套的机器学习流程（语音转写、人脸检测等），希望降低门槛，让自然情境下的婴儿研究能被更多人复现、修改、拓展。</p>
+				<p class="zh">我的博士论文 <em>Joint Attention in the Wild</em>（真实生活中的共同注意）探讨婴儿如何在自然的家庭情境里与照护者协调注意。近来，我把重心放在方法与工具上：一套名为 OpenBabyographer 的开源婴儿可穿戴设备，以及配套的机器学习流程（语音转写、人脸检测等），希望降低门槛，让自然情境下的婴儿研究能被更多人复现、修改、拓展。</p>
 				<p class="en">My dissertation, <em>Joint Attention in the Wild</em>, examines how infants coordinate attention with caregivers in natural, at-home settings. Lately my focus has shifted toward methods and tools — an open-source infant wearable called OpenBabyographer and its machine-learning pipeline (speech transcription, face detection) — meant to lower the barrier so that naturalistic infant research can be reproduced, adapted, and extended.</p>
 			</section>
 
@@ -34,8 +34,34 @@ import Header from '../components/Header.astro';
 </html>
 
 <style>
-	main { max-width: 680px; margin: 0 auto; padding: 3rem 1rem; line-height: 1.9; }
-	section { margin-bottom: 2.5rem; }
-	.en { color: #6B6A60; font-size: 0.95rem; line-height: 1.75; margin-top: 1rem; }
-	.cv { margin-top: 3rem; }
+	main {
+		max-width: 40rem;
+		margin: 4rem auto;
+		padding: 0 1.25rem;
+	}
+	h1 {
+		font-family: Georgia, 'Times New Roman', 'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', serif;
+		font-size: 1.25rem;
+		letter-spacing: 0.02em;
+		margin: 0 0 2.4rem;
+	}
+	section {
+		margin-bottom: 2.5rem;
+	}
+	.zh {
+		font-family: Georgia, 'Times New Roman', 'Songti SC', 'Noto Serif SC', 'Source Han Serif SC', serif;
+		font-size: 1.125rem;
+		line-height: 2;
+		color: #1a1a1a;
+		margin: 0 0 0.35rem;
+	}
+	.en {
+		font-size: 0.8rem;
+		line-height: 1.85;
+		color: #9a9a94;
+		margin: 0 0 2rem;
+	}
+	.cv {
+		margin-top: 3rem;
+	}
 </style>
